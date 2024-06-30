@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import WeekDays from "./WeekDays";
 import SuiteDetails from "./SuiteDetails";
 import { SuiteData } from "@/lib/types";
+import Loader from "./common/loader";
 function RoomCategory() {
   const { dateRange, calendarRef, suiteDetailsRef } = useDate();
   const startDate = dateRange[0]?.format("YYYY-MM-DD") || "";
@@ -23,7 +24,7 @@ function RoomCategory() {
   const canaryDeluxDouble = processCalendarData(
     data[0]?.inventory_calendar || []
   );
-  if (isLoading) return;
+  if (isLoading) return <Loader />;
   return (
     <section className="bg-white flex flex-col w-full rounded-md pr-2">
       <div

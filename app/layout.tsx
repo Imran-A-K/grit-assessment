@@ -2,7 +2,8 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 import GlobalProvider from "@/components/common/GlobalProvider";
-import { ReactNodeAsChildrenProps, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { ReactNodeAsChildrenProps } from "@/lib/types";
 
 const poppins = Poppins({
   subsets: ["latin"],

@@ -16,28 +16,39 @@ function SuiteDetails({ suiteData }: any) {
       className="grid grid-cols-[1fr_3fr]
      divide-gray-200"
     >
-      <p className="font-semibold text-lg pl-3 py-3">{suiteData?.name}</p>
-      <div className="grid grid-cols-3 py-3">
+      <p className="font-semibold max-lg:hidden text-lg pl-3 py-3">
+        {suiteData?.name}
+      </p>
+      <div className="grid grid-cols-3 py-3 max-lg:hidden">
         <div className="flex items-center justify-center col-start-3">
           <Button variant="contained" color="secondary">
             + Bulk Edit
           </Button>
         </div>
       </div>
+      <div className="col-span-2 lg:hidden flex items-center justify-between">
+        <p className="font-semibold text-lg pl-3 py-3">{suiteData?.name}</p>
+        <Button variant="contained" color="secondary">
+          + Bulk Edit
+        </Button>
+      </div>
       <div className="flex flex-col divide-y-[1px] border-r-[1px] pl-3">
-        <p className="font-medium">Room status</p>
-        <p className="font-medium">Room to sell</p>
-        <p className="font-medium">Net booked</p>
+        <p className="font-medium max-sm:text-sm max-sm:pt-1">Room status</p>
+        <p className="font-medium max-sm:text-sm">Room to sell</p>
+        <p className="font-medium max-sm:text-sm">Net booked</p>
         {suiteData?.rate_plans?.map((rates: any) => (
           <div
             key={crypto.randomUUID()}
-            className="flex flex-col divide-y-[1px]"
+            className="flex flex-col divide-y-[1px] "
           >
             <div className="font-medium flex flex-col">
-              <p className="">{rates?.name}</p>
+              <p className="sm:hidden max-sm:flex max-sm:text-sm">
+                {rates?.name + "🕴️" + " x " + suiteData?.occupancy}
+              </p>
+              <p className="max-sm:hidden">{rates?.name}</p>
 
-              <p className=" text-blue-500 pl-3 flex gap-2 items-center ">
-                <IoMdPerson className="h-4 w-4" /> x {suiteData?.occupancy}
+              <p className=" text-blue-500 pl-3 hidden sm:flex gap-2 items-center ">
+                <IoMdPerson className="h-4 w-4" /> {"x " + suiteData?.occupancy}
               </p>
             </div>
 

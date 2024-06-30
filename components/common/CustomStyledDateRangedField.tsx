@@ -21,6 +21,10 @@ const CustomStyledDateRangeField = styled(SingleInputDateRangeField)(
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "#003865",
     },
+    "@media (max-width: 900px)": {
+      width: "70%",
+      maxWidth: "70%",
+    },
   })
 );
 
