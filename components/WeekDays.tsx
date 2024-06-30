@@ -2,7 +2,7 @@ import React from "react";
 
 function WeekDays({ calendarData }: any) {
   return (
-    <div className="flex flex-col divide-y-2">
+    <div className="flex flex-col divide-y-2 select-none">
       <p className="font-bold">{calendarData?.month}</p>
       <div className="flex divide-x-[1px] border-b-2">
         {calendarData?.weekdays.map((day: string) => (
