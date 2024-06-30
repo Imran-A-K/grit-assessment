@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import WeekDays from "./WeekDays";
 import SuiteDetails from "./SuiteDetails";
 import { SuiteData } from "@/lib/types";
-import Loader from "./common/loader";
+import Loader from "./common/Loader";
 function RoomCategory() {
   const { dateRange, calendarRef, suiteDetailsRef } = useDate();
   const startDate = dateRange[0]?.format("YYYY-MM-DD") || "";
